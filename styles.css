@@ -1,0 +1,153 @@
+html,
+body {
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  display: block;
+  font-family: "Titillium Web", sans-serif;
+  margin-top: 28px;
+}
+h1 {
+  font-size: 57px;
+  letter-spacing: 5px;
+  margin-top: 16px;
+}
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 80px;
+  text-shadow: grey 0 1px;
+  letter-spacing: 9px;
+  margin-top: auto;
+}
+h4 {
+  margin-bottom: 46px;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+h5 {
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-top: -26px;
+  margin-bottom: 67px;
+}
+p {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-family: "Titillium Web", sans-serif;
+}
+.well {
+  background-color: #ffffee;
+}
+
+#content {
+  padding: 4% 25% 2%;
+}
+
+.search-form {
+  border-radius: 30px 0 0 30px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+input-group-btn {
+  max-width: 38px;
+}
+
+#search {
+  border: 1px;
+}
+
+.search-btn {
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  background-color: #fff;
+  color: rgb(222, 235, 242);
+  font-family: "Titillium Web", sans-serif;
+  border-color: rgb(211, 211, 211);
+}
+
+.farenheitorcelsius {
+  font-size: 35px;
+  margin-top: 0;
+}
+.text-center {
+  color: #fff;
+  font-size: smaller;
+}
+
+.row {
+  margin-left: auto;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+.col {
+  padding: 0;
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+}
+.v-divider {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid gray;
+}
+.weekday {
+  font-size: 100px;
+}
+
+.weatherapp {
+  background-color: rgb(222, 235, 242);
+  padding: 15px;
+  margin: 20px;
+  max-width: 600px;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 18px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+a:hover {
+  font-weight: bold;
+  color: white;
+}
+.currentLocationButton {
+  cursor: pointer;
+  border-radius: 30px 30px 30px 30px;
+  background-color: #fff;
+  color: rgb(144, 144, 144);
+  font-family: "Titillium Web", sans-serif;
+  border-color: rgb(211, 211, 211);
+  border: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+  left: 60px;
+  margin: 0 auto;
+  border: 2px;
+}
+.currentLocationButton:hover {
+  color: grey;
+  background-color: rgb(222, 235, 242);
+  border-color: black;
+  border: 1px;
+  transition: all 150ms ease-in-out;
+  font-weight: bold;
+}

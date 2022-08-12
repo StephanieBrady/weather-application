@@ -4,7 +4,122 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/dcaf7014a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="src/index.js">
+
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+           <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+      </link></link></link>
+    </script>
   </head>
-  <body></body>
 </html>
+<body>
+  <div class="weatherapp">
+    <div class="container">
+      <div id="content">
+        <form class="form-inline">
+          <div class="input-group">
+            <input
+              type="text"
+              id="search-form"
+              class="form-control search-form"
+              placeholder="Enter City"
+            />
+            <span class="input-group-btn" style="width: 39px">
+              <button
+                id="search-this"
+                type="submit"
+                class="pull-right btn btn-default search-btn"
+              >
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+          <button
+            id="currentLocationButton"
+            type="submit"
+            class="currentLocationButton"
+          >
+            Current Location
+          </button>
+        </form>
+      </div>
+
+      <h1 id="city"></h1>
+
+      <h3>
+        <span class="temperature" id="temperature"></span
+        ><span class="farenheitorcelsius"
+          ><sup
+            >° <a href="#" id="farenheit-link">F </a>|<a
+              href="#"
+              id="celsius-link"
+            >
+              C</a
+            ></sup
+          ></span
+        >
+      </h3>
+      <h4 id="currentDate"></h4>
+      <h5>
+        <span id="info"></span> <br />
+        <span id="wind-now"></span>
+        <i class="fa-solid fa-wind"></i>
+      </h5>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <strong>Thursday</strong> <br />
+            <i class="fa-solid fa-cloud-sun"></i><br />
+            86° / 65° <br />
+            10% <i class="fa-solid fa-droplet"></i>
+          </div>
+
+          <div class="col v-divider">
+            <strong>Friday</strong> <br />
+            <i class="fa-solid fa-cloud-showers-heavy"></i><br />
+            86° / 65° <br />
+            80% <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col v-divider">
+            <strong>Saturday</strong> <br />
+            <i class="fa-solid fa-cloud-sun"></i><br />
+            86° / 65° <br />
+            10% <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col v-divider">
+            <strong>Sunday </strong><br />
+            <i class="fa-solid fa-cloud-sun"></i> <br />
+            86° / 65° <br />
+            10% <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col v-divider">
+            <strong>Monday</strong> <br /><i
+              class="fa-solid fa-cloud-sun-rain"
+            ></i>
+            <br />
+            86° / 65° <br />
+            20% <i class="fa-solid fa-droplet"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center">
+      <i class="fa-solid fa-mountain-sun"></i> coded by Stephanie Brady
+    </p>
+  </div>
+</body>
