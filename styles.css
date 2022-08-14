@@ -119,8 +119,8 @@ input-group-btn {
 }
 a {
   text-decoration: none;
-  color: black;
-  font-size: 18px;
+  color: #afb5b8;
+  font-size: 15px;
 }
 a:hover {
   font-weight: bold;
