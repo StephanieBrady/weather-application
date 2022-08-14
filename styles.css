@@ -152,9 +152,9 @@ a:hover {
   font-weight: bold;
 }
 .code-id {
-  text-decoration: underline;
+  text-decoration: none;
   font-family: "Titillium Web", sans-serif;
-  color: #afb5b8;
+  color: grey;
   font-size: 20px;
 }
 .code-id:hover {
