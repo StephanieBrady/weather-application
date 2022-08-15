@@ -120,7 +120,7 @@ input-group-btn {
 a {
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
 }
 a:hover {
   font-weight: bold;
@@ -160,4 +160,8 @@ a:hover {
 .code-id:hover {
   text-decoration: none;
   font-size: 18px;
+}
+text-center {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 15px;
 }
