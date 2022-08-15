@@ -70,6 +70,11 @@ let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 function showWeather(response) {
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
   let currentWeather = document.querySelector("#temperature");
   currentWeather.innerHTML = Math.round(response.data.main.temp);
   let city = document.querySelector("#city");

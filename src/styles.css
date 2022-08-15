@@ -82,7 +82,7 @@ input-group-btn {
   position: relative;
   top: -36px;
 }
-.fa-cloud {
+img {
   font-size: 65px;
 }
 .text-center {
@@ -131,6 +131,7 @@ a:hover {
   font-weight: bold;
   color: white;
 }
+
 .currentLocationButton {
   cursor: pointer;
   border-radius: 30px 30px 30px 30px;
