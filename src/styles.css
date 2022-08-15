@@ -75,10 +75,11 @@ input-group-btn {
   font-family: "Titillium Web", sans-serif;
   border-color: rgb(211, 211, 211);
 }
-
 .farenheitorcelsius {
   font-size: 35px;
   margin-top: 0;
+  position: relative;
+  top: -34px;
 }
 .text-center {
   color: #fff;
