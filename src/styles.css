@@ -13,7 +13,7 @@ h5 {
   margin-top: 28px;
 }
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: 5px;
   margin-top: 16px;
 }
@@ -22,13 +22,13 @@ h2 {
 }
 
 h3 {
-  font-size: 80px;
+  font-size: 37px;
   text-shadow: grey 0 1px;
   letter-spacing: 9px;
   margin-top: auto;
 }
 h4 {
-  margin-top: 36px;
+  margin-top: 11px;
   margin-bottom: 45px;
   font-size: 20px;
   letter-spacing: 6px;
@@ -37,7 +37,7 @@ h5 {
   font-size: 16px;
   letter-spacing: 4px;
   margin-top: -36px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 p {
   margin-top: 20px;
@@ -77,13 +77,10 @@ input-group-btn {
   border-color: rgb(211, 211, 211);
 }
 .farenheitorcelsius {
-  font-size: 35px;
+  font-size: 20px;
   margin-top: 0;
   position: relative;
-  top: -36px;
-}
-img {
-  font-size: 65px;
+  top: -11px;
 }
 .text-center {
   color: #fff;
