@@ -43,11 +43,11 @@ function celsius(event) {
 
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.classList.add("active-temp");
-  let farenheitLink = document.querySelector("#farenheit-link");
-  farenheitLink.classList.remove("active-temp");
+  let fahrenheitink = document.querySelector("#fahrenheit-link");
+  fahrenheitink.classList.remove("active-temp");
 }
 
-function farenheit(event) {
+function fahrenheit(event) {
   event.preventDefault();
   let todayTemp = document.querySelector("#temperature");
   todayTemp.innerHTML = 85;
@@ -57,8 +57,8 @@ function farenheit(event) {
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsius);
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", farenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", fahrenheit);
 
 // week 5 //
 
@@ -71,20 +71,21 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 function showWeather(response) {
   let icon = document.querySelector("#icon");
+  let currentWeather = document.querySelector("#temperature");
+  let city = document.querySelector("#city");
+  let info = document.querySelector("#info");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind-now");
+  city.innerHTML = response.data.name;
+  info.innerHTML = response.data.weather[0].description;
+  currentWeather.innerHTML = Math.round(response.data.main.temp);
+  humidity.innerHTML = response.data.main.humidity;
+
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} `;
   icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  let currentWeather = document.querySelector("#temperature");
-  currentWeather.innerHTML = Math.round(response.data.main.temp);
-  let city = document.querySelector("#city");
-  city.innerHTML = response.data.name;
-  let info = document.querySelector("#info");
-  info.innerHTML = response.data.weather[0].description;
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
-  let wind = document.querySelector("#wind-now");
-  wind.innerHTML = `${Math.round(response.data.wind.speed)} `;
 }
 
 function searchCity(city) {
