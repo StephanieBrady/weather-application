@@ -36,32 +36,6 @@ searchForm.addEventListener("submit", search);
 
 //
 
-function celsius(event) {
-  event.preventDefault();
-  let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = 29;
-
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.add("active-temp");
-  let fahrenheitink = document.querySelector("#fahrenheit-link");
-  fahrenheitink.classList.remove("active-temp");
-}
-
-function fahrenheit(event) {
-  event.preventDefault();
-  let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = 85;
-
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.remove("active-temp");
-}
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celsius);
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", fahrenheit);
-
-// week 5 //
-
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -76,11 +50,12 @@ function showWeather(response) {
   let info = document.querySelector("#info");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind-now");
+  let fahrenheitTemperature = response.data.main.temp;
+  let celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   info.innerHTML = response.data.weather[0].description;
   currentWeather.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = response.data.main.humidity;
-
   wind.innerHTML = `${Math.round(response.data.wind.speed)} `;
   icon.setAttribute(
     "src",
@@ -113,4 +88,33 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
 }
+//
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.classList.add("active-temp");
+  let fahrenheitink = document.querySelector("#fahrenheit-link");
+  fahrenheitink.classList.remove("active-temp");
+  let todayTemp = document.querySelector("#temperature");
+  todayTemp.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let todayTemp = document.querySelector("#temperature");
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.classList.remove("active-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+// week 5 //
+
+let celsiusTemperature = null;
+
 searchCity("Fort Payne");
