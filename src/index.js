@@ -64,7 +64,7 @@ function showWeather(response) {
 }
 
 function searchCity(city) {
-  let units = "imperial";
+  let units = "metric";
   let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
@@ -81,7 +81,7 @@ function search(event) {
 }
 
 function searchLocation(position) {
-  let units = "imperial";
+  let units = "metric";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
