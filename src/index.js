@@ -36,6 +36,7 @@ searchForm.addEventListener("submit", search);
 
 //
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
 
@@ -70,6 +71,15 @@ function getCurrentPosition(event) {
 let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let units = "metric";
+  let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   let icon = document.querySelector("#icon");
   let currentWeather = document.querySelector("#temperature");
@@ -88,6 +98,8 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -145,4 +157,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celsiusTemperature = null;
 
 searchCity("Fort Payne");
-displayForecast();
