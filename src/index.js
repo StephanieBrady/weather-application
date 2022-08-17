@@ -41,7 +41,6 @@ function formatDay(timestamp) {
 
   return days[day];
 }
-
 //
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -55,7 +54,7 @@ function displayForecast(response) {
         `
       <div class="col-2 ">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div> 
-      ${index}
+      
         <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
