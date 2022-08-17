@@ -35,6 +35,45 @@ let searchForm = document.querySelector(".form-inline");
 searchForm.addEventListener("submit", search);
 
 //
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `<div class="container-fluid">
+            <div class="col-2">
+              <div class="weather-forecast" id="forecast">
+                <div class="forecast-date"><strong>Sunday </strong></div>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt=""
+                  width="42"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  forecastHTML =
+    forecastHTML +
+    `<div class="container-fluid">
+            <div class="col">
+              <div class="weather-forecast" id="forecast">
+                <div class="forecast-date"><strong>Sunday </strong></div>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt=""
+                  width="42"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function getCurrentPosition(event) {
   event.preventDefault();
@@ -51,7 +90,7 @@ function showWeather(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind-now");
   let fahrenheitTemperature = response.data.main.temp;
-  let celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   info.innerHTML = response.data.weather[0].description;
   currentWeather.innerHTML = Math.round(response.data.main.temp);
@@ -118,3 +157,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celsiusTemperature = null;
 
 searchCity("Fort Payne");
+displayForecast();
