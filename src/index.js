@@ -144,4 +144,33 @@ function searchLocation(position) {
 }
 //
 
+function displayCelsius(event) {
+  event.preventDefault();
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.classList.add("active-temp");
+  let fahrenheitink = document.querySelector("#fahrenheit-link");
+  fahrenheitink.classList.remove("active-temp");
+  let todayTemp = document.querySelector("#temperature");
+  todayTemp.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let todayTemp = document.querySelector("#temperature");
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.classList.remove("active-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+// week 5 //
+
+let celsiusTemperature = null;
+
+searchCity("Fort Payne");
+
 searchCity("Fort Payne");
