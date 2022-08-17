@@ -88,7 +88,7 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   console.log(apiUrl);
@@ -118,7 +118,7 @@ function showWeather(response) {
 }
 
 function searchCity(city) {
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
@@ -135,7 +135,7 @@ function search(event) {
 }
 
 function searchLocation(position) {
-  let units = "metric";
+  let units = "imperial";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "ea9e7b8bf2f9612b3750d0064eff684e";
@@ -143,32 +143,5 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 //
-
-function displayCelsius(event) {
-  event.preventDefault();
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.add("active-temp");
-  let fahrenheitink = document.querySelector("#fahrenheit-link");
-  fahrenheitink.classList.remove("active-temp");
-  let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = Math.round(celsiusTemperature);
-}
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let todayTemp = document.querySelector("#temperature");
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.remove("active-temp");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
-}
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-// week 5 //
-
-let celsiusTemperature = null;
 
 searchCity("Fort Payne");
