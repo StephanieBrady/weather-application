@@ -16,8 +16,20 @@ function getDate() {
   ];
   let day = days[now.getDay()];
   let hour = now.getHours();
+  let ampm = "null";
   if (hour < 10) {
     hour = `0${hour}`;
+  }
+  if (hour < 12) {
+    ampm = "A.M.";
+  } else if (hour > 12) {
+    ampm = "P.M.";
+    hour = hour - 12;
+  } else if (hour === 0) {
+    hour = 12;
+    ampm = "A.M.";
+  } else if (hour === 12) {
+    ampm = "P.M.";
   }
   let minutes = now.getMinutes();
   if (minutes < 10) {
@@ -96,19 +108,29 @@ function getForecast(coordinates) {
 }
 
 function showWeather(response) {
+  console.log(response.data);
   let icon = document.querySelector("#icon");
   let currentWeather = document.querySelector("#temperature");
   let city = document.querySelector("#city");
   let info = document.querySelector("#info");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind-now");
+  let windUnitElement = document.querySelector("#windUnit");
+  if (units == "metric") {
+    wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
+    windUnitElement.innerHTML = "km/h";
+  } else if (units == "imperial") {
+    wind.innerHTML = Math.round(response.data.wind.speed);
+    windUnitElement.innerHTML = "mph";
+  }
+
   let fahrenheitTemperature = response.data.main.temp;
   celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   info.innerHTML = response.data.weather[0].description;
   currentWeather.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = response.data.main.humidity;
-  wind.innerHTML = `${Math.round(response.data.wind.speed)} `;
+
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -171,6 +193,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusTemperature = null;
 
-searchCity("Fort Payne");
+let units = "imperial";
 
 searchCity("Fort Payne");
