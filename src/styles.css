@@ -108,9 +108,6 @@ input-group-btn {
   height: 100%;
   border-left: 1px solid gray;
 }
-.weekday {
-  font-size: 100px;
-}
 
 .weatherapp {
   background-color: rgb(222, 235, 242);
