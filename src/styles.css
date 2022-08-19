@@ -120,6 +120,7 @@ input-group-btn {
   border: 1px solid black;
   margin: auto;
   border-radius: 18px;
+  margin-top: 15px;
 }
 a {
   text-decoration: none;

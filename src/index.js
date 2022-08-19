@@ -108,7 +108,6 @@ function getForecast(coordinates) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   let icon = document.querySelector("#icon");
   let currentWeather = document.querySelector("#temperature");
   let city = document.querySelector("#city");
