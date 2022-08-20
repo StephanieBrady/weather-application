@@ -3,6 +3,7 @@ body {
   height: 100%;
   background: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg");
   background-size: cover;
+  background-attachment: fixed;
 }
 h1,
 h2,
