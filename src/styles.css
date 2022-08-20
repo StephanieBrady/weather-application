@@ -1,6 +1,8 @@
 html,
 body {
   height: 100%;
+  background: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg");
+  background-size: cover;
 }
 h1,
 h2,
@@ -110,7 +112,7 @@ input-group-btn {
 }
 
 .weatherapp {
-  background-color: rgb(222, 235, 242);
+  background-color: rgb(208 225 234 / 76%);
   padding: 15px;
   margin: 20px;
   max-width: 600px;

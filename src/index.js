@@ -176,7 +176,6 @@ function displayCelsius(event) {
   console.log(celsiusTemperature);
   todayTemp.innerHTML = Math.round((celsiusTemperature - 32) / 1.8);
 }
-
 function displayFahrenheit(event) {
   event.preventDefault();
   let todayTemp = document.querySelector("#temperature");
