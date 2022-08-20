@@ -165,6 +165,7 @@ function searchLocation(position) {
 }
 //
 
+//
 function displayCelsius(event) {
   event.preventDefault();
   let celsiusLink = document.querySelector("#celsius-link");
@@ -172,7 +173,8 @@ function displayCelsius(event) {
   let fahrenheitink = document.querySelector("#fahrenheit-link");
   fahrenheitink.classList.remove("active-temp");
   let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = Math.round(celsiusTemperature);
+  console.log(celsiusTemperature);
+  todayTemp.innerHTML = Math.round((celsiusTemperature - 32) / 1.8);
 }
 
 function displayFahrenheit(event) {
