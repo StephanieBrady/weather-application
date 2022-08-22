@@ -123,8 +123,7 @@ function showWeather(response) {
     windUnitElement.innerHTML = "mph";
   }
 
-  let fahrenheitTemperature = response.data.main.temp;
-  celsiusTemperature = response.data.main.temp;
+  fahrenheitTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   info.innerHTML = response.data.weather[0].description;
   currentWeather.innerHTML = Math.round(response.data.main.temp);
@@ -173,15 +172,14 @@ function displayCelsius(event) {
   let fahrenheitink = document.querySelector("#fahrenheit-link");
   fahrenheitink.classList.remove("active-temp");
   let todayTemp = document.querySelector("#temperature");
-  console.log(celsiusTemperature);
-  todayTemp.innerHTML = Math.round((celsiusTemperature - 32) / 1.8);
+  console.log(fahrenheitTemperature);
+  todayTemp.innerHTML = Math.round((fahrenheitTemperature - 32) / 1.8);
 }
 function displayFahrenheit(event) {
   event.preventDefault();
   let todayTemp = document.querySelector("#temperature");
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.classList.remove("active-temp");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   todayTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
 let celsiusLink = document.querySelector("#celsius-link");
@@ -191,7 +189,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 // week 5 //
 
-let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 let units = "imperial";
 
